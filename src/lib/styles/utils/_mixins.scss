@@ -1,0 +1,50 @@
+@mixin tablet {
+  @media screen and (max-width: 920px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin typographies($type) {
+  $typography: map-get($typographies, $type);
+  @each $attribute, $val in $typography {
+    #{$attribute}: #{$val};
+  }
+  @include tablet {
+    $typography: map-get($mobile-typographies, $type);
+    @each $attribute, $val in $typography {
+      #{$attribute}: #{$val};
+    }
+  }
+}
+
+@mixin ellipsis($line-count) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line-count;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin input($bg-color: $basic-white){
+  @include typographies(body-bold);
+  padding: 8px;
+  border: 1px solid $basic-black;
+  border-radius: 8px;
+  outline: none;
+  background-color: $bg-color;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+
+  &:focus {
+    border: 3px solid $basic-black;
+  }
+
+  &--error {
+    border: 1px solid $error-primary;
+  }
+}

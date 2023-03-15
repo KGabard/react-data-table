@@ -1,0 +1,21 @@
+.search {
+  grid-row: 1;
+  grid-column: 2;
+  position: relative;
+  width: fit-content;
+  justify-self: end;
+
+  &__input {
+    @include input;
+    box-shadow: none;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+  }
+}

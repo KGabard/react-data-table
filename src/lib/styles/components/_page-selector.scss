@@ -1,0 +1,35 @@
+.page-selector {
+  grid-row: 3;
+  grid-column: 2;
+  justify-self: end;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+
+  &__button {
+    min-width: 32px;
+    width: fit-content;
+    padding: 8px;
+    height: 40px;
+    @include typographies(body-bold);
+    color: $basic-white;
+    background-color: $basic-black;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+
+    &__previous-icon,
+    &__next-icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    &__previous-icon {
+      transform: rotate(-90deg);
+    }
+
+    &__next-icon {
+      transform: rotate(90deg);
+    }
+  }
+}

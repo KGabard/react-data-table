@@ -1,0 +1,25 @@
+$basic-black: black;
+$basic-white: white;
+
+$neutral-primary: #e6e6e6;
+
+$highlight-primary: #5a6f08;
+$highlight-secondary: #93ad18;
+
+$error-primary: #fc3116;
+
+$desktop-margin: 96px;
+
+:root {
+  --basic-black: #{$basic-black};
+  --basic-white: #{$basic-white};
+
+  --neutral-primary: #{$neutral-primary};
+
+  --highlight-primary: #{$highlight-primary};
+  --highlight-secondary: #{$highlight-secondary};
+
+  --error-primary: #{$error-primary};
+
+  --desktop-margin: #{$desktop-margin};
+}

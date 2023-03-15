@@ -1,0 +1,14 @@
+@import './Utils/variables';
+@import './Base/typographies';
+@import './Utils/mixins';
+@import './Utils/functions';
+@import './Utils/animations';
+@import './Base/base';
+
+@import './components/table-header';
+@import './components/table-line';
+@import './components/page-selector';
+@import './components/number-of-entries';
+@import './components/search';
+
+@import './layouts/table';

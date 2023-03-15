@@ -1,0 +1,19 @@
+.number-of-entries {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  align-self: end;
+
+  &__select {
+    @include typographies(body);
+    padding: 0 0 0 4px;
+    border-radius: 6px;
+  }
+
+  &__text {
+    @include typographies(body);
+  }
+}

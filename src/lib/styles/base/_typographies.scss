@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&family=Mukta+Vaani:wght@500&family=Palanquin+Dark:wght@600&display=swap');
+
+$typographies: (
+  header: (
+    font-family: (
+      'Palanquin Dark',
+      sans-serif,
+    ),
+    font-weight: 600,
+    font-size: 36px,
+  ),
+  header-small: (
+    font-family: (
+      'Palanquin Dark',
+      sans-serif,
+    ),
+    font-weight: 600,
+    font-size: 16px,
+  ),
+  title: (
+    font-family: (
+      'Mukta Vaani',
+      sans-serif,
+    ),
+    font-weight: 500,
+    font-size: 28px,
+  ),
+  body: (
+    font-family: (
+      'Karla',
+      sans-serif,
+    ),
+    font-weight: 400,
+    font-size: 18px,
+  ),
+  body-bold: (
+    font-family: (
+      'Karla',
+      sans-serif,
+    ),
+    font-weight: 700,
+    font-size: 20px,
+  ),
+  body-italic: (
+    font-family: (
+      'Karla',
+      sans-serif,
+    ),
+    font-weight: 400,
+    font-style: italic,
+    font-size: 16px,
+  ),
+  body-small: (
+    font-family: (
+      'Karla',
+      sans-serif,
+    ),
+    font-weight: 400,
+    font-size: 16px,
+  ),
+);
+
+$mobile-typographies: (
+  header: (
+    font-family: (
+      'Palanquin Dark',
+      sans-serif,
+    ),
+    font-weight: 600,
+    font-size: 36px,
+  ),
+  header-small: (
+    font-family: (
+      'Palanquin Dark',
+      sans-serif,
+    ),
+    font-weight: 600,
+    font-size: 16px,
+  ),
+  title: (
+    font-family: (
+      'Mukta Vaani',
+      sans-serif,
+    ),
+    font-weight: 500,
+    font-size: 28px,
+  ),
+  body: (
+    font-family: (
+      'Karla',
+      sans-serif,
+    ),
+    font-weight: 400,
+    font-size: 18px,
+  ),
+  body-bold: (
+    font-family: (
+      'Karla',
+      sans-serif,
+    ),
+    font-weight: 700,
+    font-size: 20px,
+  ),
+  body-italic: (
+    font-family: (
+      'Karla',
+      sans-serif,
+    ),
+    font-weight: 400,
+    font-style: italic,
+    font-size: 16px,
+  ),
+  body-small: (
+    font-family: (
+      'Karla',
+      sans-serif,
+    ),
+    font-weight: 400,
+    font-size: 16px,
+  ),
+);

@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { employeesList } from './data/employeesData'
+import './App.css'
+import Table from './lib'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Table
+        data={employeesList}
+        columnsWidth={[1, 1, 0.85, 1, 0.85, 1, 1, 1, 0.7]}
+        colors={{
+          primary: 'var(--highlight-primary)',
+          secondary: 'var(--highlight-secondary)',
+        }}
+        enableNumberOfEntries={true}
+        enableSearch={true}
+        enableSort={true}
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

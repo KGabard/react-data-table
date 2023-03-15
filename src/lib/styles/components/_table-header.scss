@@ -1,0 +1,59 @@
+.table-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  border-bottom: 2px solid $basic-black;
+
+  &__item {
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 12px;
+
+    &__title {
+      @include typographies(body-bold);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &__sort-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: start;
+      padding-left: 16px;
+      gap: 4px;
+
+      &__button {
+        border: none;
+        background-color: $basic-black;
+        padding: 8px 6px;
+        border-radius: 6px;
+
+        &--active,
+        &:hover {
+          transition: background-color 0.2s ease-in-out;
+          background-color: lighten($color: $basic-black, $amount: 60%);
+          cursor: pointer;
+        }
+
+        &__asc-icon,
+        &__desc-icon {
+          width: 14px;
+          height: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        &__desc-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
