@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# Composant react-data-table
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Description
+Le composant react-data-table permet de prendre en données d'entrée un tableau d'objets ayants les même propriétés (les data) afin de les afficher sous forme d'une table dont les colonnes représentent les propriétés alors que les lignes représentent chaque entité du tableau.
 
-## Available Scripts
+## 2. Paramètres
 
-In the project directory, you can run:
+### 2.1 data: DataType[]
+Les data sont le tableau d'objet qui constitu les données d'entrée. Le DataType est un objet dont l'ensemble des propriétés sont de type string.
 
-### `npm start`
+### 2.2 columnsWidth: number[]
+Les columnsWidth sont un tableau de number qui représentent le paramètre flex-grow de chaque colonne et permet donc d'indiquer la largeur relative par colonne.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2.3 enableNumberOfEntries?: boolean
+Le paramètre enableNumberOfEntries est optionnel et permet d'afficher ou non le menu déroulant permettant de choisir le nombre d'entrées par page de la table.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 2.4 enableSearch?: boolean
+Le paramètre enableSearch est optionnel et permet d'afficher ou non la barre de recherche permettant de filtrer la table.
 
-### `npm test`
+### 2.5 enableSort?: boolean
+Le paramètre enableSort est optionnel et permet d'afficher ou non les bouttons de tri permettant de trier une colonne dans l'ordre ascendant ou descendant.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2.5   colors?: { primary: string, secondary: string }
+Le paramètre colors est optionnel et permet de choisir une couleur primaire et une secondaire pour personaliser le tableau selon notre convenance.
 
-### `npm run build`
+## 3. Exemple d'utilisation
+Etant donnée le tableau de donnée suivant :
+```js
+const employeesList = [
+  {
+    firstName: 'Elijah',
+    lastName: 'Larsen',
+    startDate: '9/3/2006',
+    department: 'Marketing',
+    dateOfBirth: '12/26/1997',
+    street: 'Chambers Alley',
+    city: 'Bridgeport',
+    state: 'Tennessee',
+    zipCode: '53584',
+  },
+  {
+    firstName: 'John',
+    lastName: 'Donovan',
+    startDate: '9/1/2006',
+    department: 'Sales',
+    dateOfBirth: '7/17/1976',
+    street: 'Monroe Tunnel',
+    city: 'San Antonio',
+    state: 'Florida',
+    zipCode: '10494',
+  },
+  ...
+]
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+On peut alors utiliser ce composant tel quel :
+```js
+import Table from '@kgabard/react-data-table'
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<Table
+  data={employeesList}
+  columnsWidth={[1, 1, 0.85, 1, 0.85, 1, 1, 1, 0.7]}
+  colors={{ primary: 'var(--highlight-primary)', secondary: 'var(--highlight-secondary)' }}
+  enableNumberOfEntries={true}
+  enableSearch={true}
+  enableSort={true}
+/>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+On obtient alors :
+<img src="tableExample.png" alt="Table">
