@@ -1,30 +1,40 @@
-# Composant react-data-table
+# React Data Table Component
+This component is an npm package and can be imported as follows: npm i @kgabard/react-data-table
 
 ## 1. Description
-Le composant react-data-table permet de prendre en données d'entrée un tableau d'objets ayants les même propriétés (les data) afin de les afficher sous forme d'une table dont les colonnes représentent les propriétés alors que les lignes représentent chaque entité du tableau.
 
-## 2. Paramètres
+The React Data Table component takes as input an array of objects with the same properties (the data) and displays them in the form of a table where columns represent the properties and rows represent each object in the array.
+
+## 2. Parameters
 
 ### 2.1 data: DataType[]
-Les data sont le tableau d'objet qui constitu les données d'entrée. Le DataType est un objet dont l'ensemble des propriétés sont de type string.
+
+The data is an array of objects that constitutes the input data. The DataType is an object whose properties are all of string type.
 
 ### 2.2 columnsWidth: number[]
-Les columnsWidth sont un tableau de number qui représentent le paramètre flex-grow de chaque colonne et permet donc d'indiquer la largeur relative par colonne.
+
+The columnsWidth is an array of numbers that represent the flex-grow parameter of each column, indicating the relative width per column.
 
 ### 2.3 enableNumberOfEntries?: boolean
-Le paramètre enableNumberOfEntries est optionnel et permet d'afficher ou non le menu déroulant permettant de choisir le nombre d'entrées par page de la table.
+
+The enableNumberOfEntries parameter is optional and controls the display of the dropdown menu allowing selection of the number of entries per page in the table.
 
 ### 2.4 enableSearch?: boolean
-Le paramètre enableSearch est optionnel et permet d'afficher ou non la barre de recherche permettant de filtrer la table.
+
+The enableSearch parameter is optional and controls the display of the search bar for filtering the table.
 
 ### 2.5 enableSort?: boolean
-Le paramètre enableSort est optionnel et permet d'afficher ou non les bouttons de tri permettant de trier une colonne dans l'ordre ascendant ou descendant.
 
-### 2.5   colors?: { primary: string, secondary: string }
-Le paramètre colors est optionnel et permet de choisir une couleur primaire et une secondaire pour personaliser le tableau selon notre convenance.
+The enableSort parameter is optional and controls the display of sorting buttons to sort a column in ascending or descending order.
 
-## 3. Exemple d'utilisation
-Etant donnée le tableau de donnée suivant :
+### 2.6 colors?: { primary: string, secondary: string }
+
+The colors parameter is optional and allows the selection of a primary and secondary color to customize the table.
+
+## 3. Example of use
+
+Given the following data array:
+
 ```js
 const employeesList = [
   {
@@ -53,8 +63,9 @@ const employeesList = [
 ]
 ```
 
-On peut alors utiliser ce composant tel quel :
-```js
+We can then use the component as follows:
+
+```jsx
 import Table from '@kgabard/react-data-table'
 
 <Table
@@ -67,5 +78,5 @@ import Table from '@kgabard/react-data-table'
 />
 ```
 
-On obtient alors :
+This will display:
 <img src="tableExample.png" alt="Table">
