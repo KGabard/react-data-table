@@ -1,5 +1,5 @@
 # React Data Table Component
-This component is an npm package and can be imported as follows: npm i @kgabard/react-data-table
+This component is an npm package and can be imported as follows: `npm i @kgabard/react-data-table`
 
 ## 1. Description
 
