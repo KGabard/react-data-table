@@ -1,6 +1,15 @@
 import React from 'react'
 import PageButton from './PageButton'
 
+/**
+ * @typedef {object} Props
+ * @property {number} currentPage - The current page.
+ * @property {number} maxPage - The maximum page.
+ * @property {() => void} nextPage - The function that handles the next page.
+ * @property {() => void} previousPage - The function that handles the previous page.
+ * @property {(page: number) => void} setPage - The function that handles setting the page.
+ * @property {{primary: string, secondary: string}} colors - Object containing primary and secondary color values.
+ */
 type Props = {
   currentPage: number
   maxPage: number
@@ -13,6 +22,13 @@ type Props = {
   }
 }
 
+/**
+ * Creates an array of pages to be displayed based on the current page and the maximum page.
+ *
+ * @param {number} currentPage - The current page.
+ * @param {number} maxPage - The maximum page.
+ * @returns {string[]} - The array of pages.
+ */
 export function pageArrayCreator(currentPage: number, maxPage: number) {
   let pageArray: string[] = []
   const maxPageArrayLength = 7
@@ -53,6 +69,11 @@ export function pageArrayCreator(currentPage: number, maxPage: number) {
   return pageArray
 }
 
+/**
+ * A component that displays a page selector UI element.
+ * @param {Props} props - The props object containing the component's properties.
+ * @return {JSX.Element} A React component that displays a page selector.
+ */
 function PageSelector({
   currentPage,
   maxPage,

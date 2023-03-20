@@ -1,12 +1,28 @@
 import React from 'react'
 
+/**
+ * @typedef {Object} Props
+ * @property {number} numberOfEntries - The number of entries to show per page.
+ * @property {(numberOfEntries: number) => void} setNumberOfEntries - Function to set the number of entries to show per page.
+ * @property {(page: number) => void} setPage - Function to set the current page.
+ */
 type Props = {
   numberOfEntries: number
   setNumberOfEntries: (numberOfEntries: number) => void
   setPage: (page: number) => void
 }
 
-function NumberOfEntries({ numberOfEntries, setNumberOfEntries, setPage }: Props) {
+/**
+ * A component to select the number of entries to show per page.
+ *
+ * @param {Props} props - The props for the component.
+ * @returns {JSX.Element} - The component.
+ */
+function NumberOfEntries({
+  numberOfEntries,
+  setNumberOfEntries,
+  setPage,
+}: Props) {
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setNumberOfEntries(Number.parseInt(event.target.value))
     setPage(1)

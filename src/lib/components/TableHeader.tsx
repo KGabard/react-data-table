@@ -3,6 +3,17 @@ import { sortType } from '../layouts/Table'
 import { convertCamelCaseToTitleCase } from '../scripts/utils/Utils'
 import FilterButton from './FilterButton'
 
+/**
+ * Props for the TableHeader component
+ * @typedef {Object} Props
+ * @property {string[]} referenceKeys - The keys of the data to be displayed in the table
+ * @property {number[]} columnsWidth - The width of each table column
+ * @property {sortType} sort - The current sort type of the table
+ * @property {(sort: sortType) => void} setSort - A function to set the sort type of the table
+ * @property {(page: number) => void} setPage - A function to set the current page number of the table
+ * @property {boolean} enableSort - Whether or not sorting is enabled
+ * @property {{primary: string, secondary: string}} colors - The primary and secondary colors of the table
+ */
 type Props = {
   referenceKeys: string[]
   columnsWidth: number[]
@@ -16,6 +27,11 @@ type Props = {
   }
 }
 
+/**
+ * A component that displays the header row of a table
+ * @param {Props} props - The props for the TableHeader component
+ * @returns {JSX.Element} A header row element for the table
+ */
 function TableHeader({
   referenceKeys,
   columnsWidth,

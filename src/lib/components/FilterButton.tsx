@@ -1,8 +1,16 @@
 import React, { useState } from 'react'
 import { sortType } from '../layouts/Table'
 import triangleIcon from '../assets/icons/triangle-icon.svg'
-import {ReactComponent as triangleIconV2} from '../assets/icons/triangle-icon.svg';
 
+/**
+ * @typedef {Object} Props
+ * @property {'asc' | 'desc'} order - The order of sorting ('asc' or 'desc').
+ * @property {string} currentKey - The key for the current sort.
+ * @property {sortType} sort - The current sort.
+ * @property {(sort: sortType) => void} setSort - Function to set the sort.
+ * @property {(page: number) => void} setPage - Function to set the page.
+ * @property {{primary: string, secondary: string}} colors - The colors for the filter button.
+ */
 type Props = {
   order: 'asc' | 'desc'
   currentKey: string
@@ -15,6 +23,12 @@ type Props = {
   }
 }
 
+/**
+ * A button for sorting a table.
+ *
+ * @param {Props} props - The props for the component.
+ * @returns {JSX.Element} - The component.
+ */
 function FilterButton({
   order,
   currentKey,

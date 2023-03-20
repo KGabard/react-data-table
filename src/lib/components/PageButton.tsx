@@ -1,6 +1,16 @@
 import React, { useState } from 'react'
 import triangleIcon from '../assets/icons/triangle-icon.svg'
 
+/**
+ * @typedef {Object} Props
+ * @property {'page' | 'next' | 'previous'} type - The type of button to render.
+ * @property {string} [page] - The page number that the button represents (only used when type is 'page').
+ * @property {number} currentPage - The current active page number.
+ * @property {Function} nextPage - Function to go to the next page.
+ * @property {Function} previousPage - Function to go to the previous page.
+ * @property {Function} setPage - Function to set the page number.
+ * @property {{primary: string, secondary: string}} colors - Object containing primary and secondary color values.
+ */
 type Props = {
   type: 'page' | 'next' | 'previous'
   page?: string
@@ -14,6 +24,11 @@ type Props = {
   }
 }
 
+/**
+ * Renders a button component used for pagination.
+ * @param {Props} props - The props for the component.
+ * @returns {JSX.Element} - The rendered component.
+ */
 function PageButton({
   type,
   page,

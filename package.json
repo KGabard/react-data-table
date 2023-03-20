@@ -2,6 +2,16 @@
   "name": "@kgabard/react-data-table",
   "version": "1.0.5",
   "private": false,
+  "author": {
+    "name": "Kevin Gabard"
+  },
+  "keywords": [
+    "react",
+    "data",
+    "table",
+    "datatable",
+    "data-table"
+  ],
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

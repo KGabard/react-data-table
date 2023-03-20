@@ -7,15 +7,32 @@ import Search from '../components/Search'
 import { sortData } from '../scripts/utils/SortLogic'
 import '../css/styles.css'
 
+/**
+ * @typedef {Object.<string, string>} DataType
+ */
 export type DataType = {
   [key: string]: string
 }
 
+/**
+ * @typedef {Object} sortType
+ * @property {string | null} value - The value to sort by.
+ * @property {'asc' | 'desc' | null} order - The order in which to sort the data.
+ */
 export type sortType = {
   value: string | null
   order: 'asc' | 'desc' | null
 }
 
+/**
+ * @typedef {Object} Props
+ * @property {DataType[]} data - The data to display in the table.
+ * @property {number[]} columnsWidth - The width of each column in pixels.
+ * @property {boolean} [enableNumberOfEntries=false] - Whether to display the number of entries selector.
+ * @property {boolean} [enableSearch=false] - Whether to display the search bar.
+ * @property {boolean} [enableSort=false] - Whether to allow sorting of the data.
+ * @property {{primary: string, secondary: string}} [colors={primary: '#000000', secondary: '#909090'}] - The colors to use for the table.
+ */
 type Props = {
   data: DataType[]
   columnsWidth: number[]
@@ -28,6 +45,12 @@ type Props = {
   }
 }
 
+/**
+ * Filters the data based on a search string.
+ * @param {DataType[]} data - The data to filter.
+ * @param {string} search - The search string.
+ * @returns {DataType[]} The filtered data.
+ */
 function filterData(data: DataType[], search: string) {
   if (search === '') return data
 
@@ -44,6 +67,11 @@ function filterData(data: DataType[], search: string) {
   return filteredData
 }
 
+/**
+ * Displays a table from data.
+ * @param {Props} props - The props for the table.
+ * @returns {JSX.Element} The table component.
+ */
 function Table({
   data,
   columnsWidth,

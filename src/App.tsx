@@ -1,20 +1,20 @@
 import React from 'react'
-import { employeesList } from './data/employeesData'
 import './App.css'
 import Table from './lib'
+import { exampleList } from './data/exampleData'
 
 function App() {
   return (
     <div className="app">
       <Table
-        data={employeesList}
-        columnsWidth={[1, 1, 0.85, 1, 0.85, 1, 1, 1, 0.7]}
+        data={exampleList}
+        columnsWidth={[0.5, 1, 1.8, 1, 1]}
         colors={{
-          primary: 'var(--highlight-primary)',
-          secondary: 'var(--highlight-secondary)',
+          primary: 'red',
+          secondary: 'lightblue',
         }}
-        enableNumberOfEntries={true}
-        enableSearch={true}
+        enableNumberOfEntries={false}
+        enableSearch={false}
         enableSort={true}
       />
     </div>
